@@ -48,11 +48,13 @@ const Footer = () => {
               <h6>Thông tin khuyến mãi</h6>
               <p>Đăng kí nhận thông tin tại đây</p>
               <form action="#">
-                <div>
+                <div className="input-group">
                   <input type="text" placeholder="Nhập email" />
-                  <button type="submit" className="button-submit">
-                    Đăng kí
-                  </button>
+          
+                    <button type="submit" className="button-submit">
+                      Đăng kí
+                    </button>
+               
                 </div>
                 <div className="footer__widget__social">
                   <div>

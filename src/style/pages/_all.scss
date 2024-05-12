@@ -41,9 +41,18 @@ body {
   max-width: 50%;
 }
 
+.button-submit {
+  font-size: 14px;
+  font-weight: 800;
+  text-transform: uppercase;
+  min-width: max-content;
+  padding: 0 5px;
+  line-height: 100%;
+  transition: all 0.3s;
+  cursor: pointer;
+}
 
-
-@include Responsive($DESKTOP){
+@include Responsive($DESKTOP) {
   .col-xl-3 {
     flex: 0 0 25%;
     max-width: 25%;
@@ -54,7 +63,7 @@ body {
   }
 }
 
-@include Responsive($MEDIUM_DEVICE){
+@include Responsive($MEDIUM_DEVICE) {
   .col-lg-3 {
     flex: 0 0 25%;
     max-width: 25%;
