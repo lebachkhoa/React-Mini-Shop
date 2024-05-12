@@ -2,6 +2,9 @@
 @import "style/pages/theme";
 
 .footer {
+  background: #f3f6fa;
+  padding-bottom: 0;
+
   .footer__about {
     margin-bottom: 30px;
 
@@ -14,6 +17,88 @@
       font-size: 16px;
       color: map-get($map: $theme-colors, $key: "normal-text");
       list-style: none;
+    }
+  }
+
+  .footer__widget {
+    margin-bottom: 30px;
+    overflow: hidden;
+
+    h6 {
+      font-size: 16px;
+      color: map-get($map: $theme-colors, $key: "normal-text");
+      margin-bottom: 10px;
+      font-weight: 700;
+      margin-top: 10px;
+    }
+
+    ul {
+      float: left;
+      width: 50%;
+      list-style: none;
+
+      a {
+        color: map-get($map: $theme-colors, $key: "normal-text");
+        font-size: 14px;
+        line-height: 32px;
+        text-decoration: none;
+      }
+    }
+
+    p {
+      font-size: 14px;
+      color: map-get($map: $theme-colors, $key: "normal-text");
+      margin-bottom: 15px;
+    }
+
+    form {
+      margin-bottom: 15px;
+
+      .input-group {
+        display: flex;
+
+        input {
+          width: 75%;
+          font-size: 16px;
+          padding-left: 15px;
+          color: map-get($map: $theme-colors, $key: "normal-text");
+          height: 30px;
+          border: 1px solid #ededed;
+
+          ::placeholder {
+            color: map-get($map: $theme-colors, $key: "normal-text");
+          }
+        }
+
+        button {
+          height: 30px;
+        }
+      }
+
+      .footer__widget__social {
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+        margin-top: 20px;
+
+        div {
+          :hover {
+            background-color: map-get($map: $theme-colors, $key: "main");
+            border-color: #ffffff;
+          }
+
+          svg {
+            padding: 8px;
+            border-radius: 50%;
+            font-size: 20px;
+            color: #404040;
+            border: 1px solid #ededed;
+            transition: all 0.3s;
+            background-color: #ffffff;
+            cursor: pointer;
+          }
+        }
+      }
     }
   }
 }
