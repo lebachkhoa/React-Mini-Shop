@@ -2,7 +2,7 @@ $DESKTOP: "DESKTOP";
 $MEDIUM_DEVICE: "MEDIUM_DEVICE";
 $TABLET_DEVICE: "TABLET_DEVICE";
 $WIDE_MOBILE: "WIDE_MOBILE";
-$SMALL_DEVICE: "SMALL_DEVICE";
+$SMALL_MOBILE: "SMALL_MOBILE";
 
 @mixin Responsive($canvas) {
   @if $canvas == $DESKTOP {
@@ -21,7 +21,7 @@ $SMALL_DEVICE: "SMALL_DEVICE";
     @media only screen and (min-width: 576px) and (max-width: 767px) {
       @content;
     }
-  } @else if $canvas == $WIDE_MOBILE {
+  } @else if $canvas == $SMALL_MOBILE {
     @media only screen and (max-width: 575px) {
       @content;
     }
