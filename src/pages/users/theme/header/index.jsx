@@ -1,5 +1,9 @@
 import "./style.scss";
-import { AiOutlineFacebook } from "react-icons/ai";
+import {
+  AiOutlineFacebook,
+  AiOutlineMenu,
+  AiOutlinePhone,
+} from "react-icons/ai";
 import { AiOutlineInstagram } from "react-icons/ai";
 import { AiOutlineUser } from "react-icons/ai";
 import { MdOutlineEmail } from "react-icons/md";
@@ -9,7 +13,9 @@ import { useState } from "react";
 import ROUTERS from "utils/router";
 
 const Header = () => {
-  const [menus, setMenus] = useState([
+  const [isShowCategories, setIsShowCategories] = useState(false);
+
+  const [menus] = useState([
     {
       name: "Trang chủ",
       path: ROUTERS.USER.HOME,
@@ -126,6 +132,70 @@ const Header = () => {
                   </a>
                 </li>
               </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="container">
+        <div className="row__categories">
+          <div className="col-xl-3 row__categories__productlist">
+            <div
+              className="row__categories__all"
+              onClick={() => setIsShowCategories(!isShowCategories)}
+            >
+              <AiOutlineMenu />
+              <span>Danh sách sản phẩm</span>
+            </div>
+            {isShowCategories && (
+              <ul className={isShowCategories ? "" : "hidden"}>
+                <li>
+                  <a href="#">Thịt tươi</a>
+                </li>
+                <li>
+                  <a href="#">Rau củ</a>
+                </li>
+                <li>
+                  <a href="#">Nước trái cây</a>
+                </li>
+                <li>
+                  <a href="#">Hải sản</a>
+                </li>
+              </ul>
+            )}
+          </div>
+          <div className="col-xl-9 row__search">
+            <div className="row__search__product">
+              <div className="row__search__product__form">
+                <form action="#">
+                  <input type="text" placeholder="Bạn đang tìm gì?" />
+                  <button type="submit" className="site-button">
+                    Tìm kiếm
+                  </button>
+                </form>
+                <div className="row__search__product__phone">
+                  <div className="row__search__product__phone__icon">
+                    <AiOutlinePhone />
+                  </div>
+                  <div className="row__search__product__phone__text">
+                    <p>0912-345-678</p>
+                    <span>Hỗ trợ 24/7</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="row__item">
+              <div className="row__item__text">
+                <span>Trái cây tươi</span>
+                <h2>
+                  Rau quả
+                  <br />
+                  sạch 100%
+                </h2>
+                <p>Miễn phí giao hàng tận nơi</p>
+                <a href="#" className="primary-button">
+                  Mua ngay
+                </a>
+              </div>
             </div>
           </div>
         </div>
