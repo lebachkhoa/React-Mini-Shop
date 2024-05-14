@@ -54,7 +54,7 @@
     ul {
       display: flex;
       justify-content: center;
-      margin-bottom: 50px;
+      margin-bottom: 15px;
     }
 
     li {
@@ -63,6 +63,62 @@
       display: inline-block;
       position: relative;
       cursor: pointer;
+    }
+  }
+
+  .feature__item {
+    margin-top: 15px;
+
+    .feature__item__pic {
+      height: 300px;
+      position: relative;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      &:hover {
+        ul {
+          visibility: visible;
+        }
+      }
+
+      ul {
+        position: absolute;
+        left: 0;
+        bottom: -16%;
+        width: 100%;
+        transition: all 0.5s;
+        visibility: hidden;
+      }
+
+      li {
+        font-size: 20px;
+        list-style: none;
+        display: inline-block;
+        margin-left: 5px;
+
+        &:hover {
+          svg {
+            background-color: map-get($map: $theme-colors, $key: "main");
+            color: #ffffff;
+            border-radius: 100%;
+          }
+        }
+      }
+    }
+
+    .feature__item__text {
+      text-align: center;
+      margin-top: 30px;
+
+      h6 {
+        font-size: 16px;
+        font-weight: 700;
+
+        a {
+          text-decoration: none;
+          color: map-get($map: $theme-colors, $key: "main");
+        }
+      }
     }
   }
 }
