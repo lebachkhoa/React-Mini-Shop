@@ -18,6 +18,8 @@ import feature5Image from "assets/users/images/feature/feature-5.png";
 import feature6Image from "assets/users/images/feature/feature-6.png";
 import feature7Image from "assets/users/images/feature/feature-7.png";
 import feature8Image from "assets/users/images/feature/feature-8.png";
+import { AiOutlineEye, AiOutlineShoppingCart } from "react-icons/ai";
+import formater from "utils/formater";
 
 const HomePage = () => {
   const slideItem = [
@@ -68,7 +70,42 @@ const HomePage = () => {
       products: [
         {
           img: feature1Image,
+          description: "Thịt bò",
+          price: "200000",
+        },
+        {
+          img: feature2Image,
+          description: "Chuối",
+          price: "200000",
+        },
+        {
+          img: feature3Image,
+          description: "Dưa hấu",
+          price: "200000",
+        },
+        {
+          img: feature4Image,
+          description: "Quả kiwi",
+          price: "200000",
+        },
+        {
+          img: feature5Image,
+          description: "Nho",
+          price: "200000",
+        },
+        {
+          img: feature6Image,
+          description: "Táo",
+          price: "200000",
+        },
+        {
+          img: feature7Image,
           description: "Xoài",
+          price: "200000",
+        },
+        {
+          img: feature8Image,
+          description: "Dâu tây",
           price: "200000",
         },
       ],
@@ -93,7 +130,32 @@ const HomePage = () => {
       tabList.push(<Tab key={index}>{data[key].title}</Tab>);
       const tabPanel = [];
       data[key].products.forEach((item, itemIndex) => {
-        tabPanel.push(<h1 key={itemIndex}>{item.description}</h1>);
+        tabPanel.push(
+          <div className="col-xl-3" key={itemIndex}>
+            <div className="feature__item">
+              <div
+                className="feature__item__pic"
+                style={{
+                  backgroundImage: `url(${item.img})`,
+                }}
+              >
+                <ul>
+                  <li>
+                    <AiOutlineEye />
+                  </li>
+                  <li>
+                    <AiOutlineShoppingCart />
+                  </li>
+                </ul>
+              </div>
+              <div className="feature__item__text">
+                <h6>
+                  <a href="">{item.description}</a>: {formater(item.price)}
+                </h6>
+              </div>
+            </div>
+          </div>
+        );
       });
       tabPanelList.push(tabPanel);
       console.log(tabPanelList);
